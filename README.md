@@ -1,26 +1,46 @@
-# googlefontimporter README
-
-Latest feature: 18.06.2022
-<br>
-use the "googlefontimporter.importFont" command to automatically create an import link for a font (provide the font name in an extra text field)
-<br>
-![Feature preview for my new feature where you can use a text field to give a specific font name that the import link will automatically be generated for](https://raw.githubusercontent.com/MyNameJeremy/googlefontimporter/googleFontImporter/featurePreview.gif)
-
-everything below this is still the example stuf because I still need to write the actual readme
-
----
-
-This is the README for your extension "googlefontimporter". After writing up a brief description, we recommend including the following sections.
+# google-font-importer README
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+### importFont
 
-For example if there is an image subfolder under your extension project workspace:
+use the "google-font-importer.importFont" command to automatically create an import link for a font (provide the font name in an extra text field)
+<br>
+![Feature preview for my new feature where you can use a text field to give a specific font name that the import link will automatically be generated for](media/featurePreview.gif)
+<br>
+The extension will check if the provided font name is an available Google Font and give an error notification if it is not.
+<br>
+![Feature preview for the feature that checks if the entered font is an available Google Font](media/featurePreview2.gif)
 
-\!\[feature X\]\(images/feature-x.png\)
+<br>
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### importFontWithVariants
+
+use the "google-font-importer.importFontWithVariants" command to automatically create an import link for a font that only includes the variants you want.
+
+When you use the command it will first open up a text field where you can enter the font name
+After you submit the input another text field will open where you can enter the font weights you want to import (separated by a comma)
+
+<br>
+
+## Release Notes
+
+Users appreciate release notes as you update your extension.
+
+### 1.0.0
+
+Initial release of google-font-importer
+
+### 1.1.0
+
+Added feature: "google-font-importer.importFontWithVariants" - command to only import certain font weights
+
+<br>
+<br>
+
+> everything below this is still the example stuf because I still need to write the actual readme
+
+---
 
 ## Requirements
 
@@ -40,22 +60,6 @@ This extension contributes the following settings:
 ## Known Issues
 
 Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of googlefontimporter
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features A, B, and C.
 
 ---
 
@@ -79,4 +83,3 @@ You can author your README using Visual Studio Code. Here are some useful editor
 - [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
-

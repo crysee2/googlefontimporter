@@ -1,25 +1,55 @@
 {
-  "name": "googlefontimporter",
-  "displayName": "googleFontImporter",
+  "name": "google-font-importer",
+  "displayName": "google-font-importer",
   "description": "Makes importing google fonts easier and faster",
-  "version": "0.0.1",
+  "version": "1.1.0",
+  "icon": "media/icon.png",
   "engines": {
     "vscode": "^1.71.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MyNameJeremy/google-font-importer"
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [
-    "onCommand:googlefontimporter.importFont"
+    "onCommand:google-font-importer.importFont",
+    "onCommand:google-font-importer.importFontWithVariants"
   ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "googlefontimporter.importFont",
-        "title": "Import Google Font"
+        "command": "google-font-importer.importFont",
+        "title": "Import Google Font with all variants"
+      },
+      {
+        "command": "google-font-importer.importFontWithVariants",
+        "title": "Import Google Font with specific variants (seperate with commas)"
       }
-    ]
+    ],
+    "configuration": {
+      "title": "Google Font Importer",
+      "properties": {
+        "google-font-importer.json-url": {
+          "type": "string",
+          "default": "https://gist.githubusercontent.com/kungfu321/32950b2c18f4708bf259fe16378d4181/raw/352133282e8427d0ee36f37da3d2b66df69c3928/google-fonts",
+          "description": "URL of the JSON file that contains the font information"
+        },
+        "google-font-importer.import-url": {
+          "type": "string",
+          "default": "https://fonts.googleapis.com/css?family=",
+          "description": "URL to import the font from"
+        },
+        "google-font-importer.slice-json-string-start": {
+          "type": "number",
+          "default": "0",
+          "description": "The start index of the desired data in the JSON file"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",
@@ -30,16 +60,21 @@
     "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.71.0",
     "@types/glob": "^7.2.0",
     "@types/mocha": "^9.1.1",
     "@types/node": "16.x",
+    "@types/vscode": "^1.71.0",
     "@typescript-eslint/eslint-plugin": "^5.31.0",
     "@typescript-eslint/parser": "^5.31.0",
+    "@vscode/test-electron": "^2.1.5",
     "eslint": "^8.20.0",
     "glob": "^8.0.3",
     "mocha": "^10.0.0",
-    "typescript": "^4.7.4",
-    "@vscode/test-electron": "^2.1.5"
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "node-fetch": "^3.2.10",
+    "xmlhttprequest": "^1.8.0"
   }
 }
